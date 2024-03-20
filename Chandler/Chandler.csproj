@@ -1,0 +1,335 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>netstandard2.0</TargetFramework>
+		<LangVersion>10.0</LangVersion>
+		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+	</PropertyGroup>
+
+	<ItemGroup>
+	  <None Remove="Spriteeeeee\achievos\DivineAllergy.png" />
+	  <None Remove="Spriteeeeee\achievos\DivineEllegy.png" />
+	  <None Remove="Spriteeeeee\achievos\DivineLobotomy.png" />
+	  <None Remove="Spriteeeeee\achievos\DivinePatiently.png" />
+	  <None Remove="Spriteeeeee\achievos\DivineStereosity.png" />
+	  <None Remove="Spriteeeeee\achievos\FoolAllergy.png" />
+	  <None Remove="Spriteeeeee\achievos\FoolEllegy.png" />
+	  <None Remove="Spriteeeeee\achievos\FoolLobotomy.png" />
+	  <None Remove="Spriteeeeee\achievos\FoolPatiently.png" />
+	  <None Remove="Spriteeeeee\achievos\FoolStereosity.png" />
+	  <None Remove="Spriteeeeee\achievos\WitnessAllergy.png" />
+	  <None Remove="Spriteeeeee\achievos\WitnessEllegy.png" />
+	  <None Remove="Spriteeeeee\achievos\WitnessLobotomy.png" />
+	  <None Remove="Spriteeeeee\achievos\WitnessPatiently.png" />
+	  <None Remove="Spriteeeeee\achievos\WitnessStereosity.png" />
+	  <None Remove="Spriteeeeee\allergy\abilitie\gaze.png" />
+	  <None Remove="Spriteeeeee\allergy\abilitie\hatred.png" />
+	  <None Remove="Spriteeeeee\allergy\abilitie\imagination.png" />
+	  <None Remove="Spriteeeeee\allergy\abilitie\pill.png" />
+	  <None Remove="Spriteeeeee\allergy\BackSaline1.png" />
+	  <None Remove="Spriteeeeee\allergy\BackSaline2.png" />
+	  <None Remove="Spriteeeeee\allergy\enemie\38.png" />
+	  <None Remove="Spriteeeeee\allergy\enemie\eye.png" />
+	  <None Remove="Spriteeeeee\allergy\enemie\fire.png" />
+	  <None Remove="Spriteeeeee\allergy\enemie\icons\shadowIconB.png" />
+	  <None Remove="Spriteeeeee\allergy\enemie\icons\ShadowOver.png" />
+	  <None Remove="Spriteeeeee\allergy\enemie\nowa.png" />
+	  <None Remove="Spriteeeeee\allergy\enemie\smile.png" />
+	  <None Remove="Spriteeeeee\allergy\enemie\squid.png" />
+	  <None Remove="Spriteeeeee\allergy\enemie\sword.png" />
+	  <None Remove="Spriteeeeee\allergy\enemie\tooth.png" />
+	  <None Remove="Spriteeeeee\allergy\FrontSaline1.png" />
+	  <None Remove="Spriteeeeee\allergy\FrontSaline2.png" />
+	  <None Remove="Spriteeeeee\allergy\passi\psycho.png" />
+	  <None Remove="Spriteeeeee\allergy\SalineLock.png" />
+	  <None Remove="Spriteeeeee\allergy\SalineMenu.png" />
+	  <None Remove="Spriteeeeee\allergy\SalineOver.png" />
+	  <None Remove="Spriteeeeee\anesthetics2.png" />
+	  <None Remove="Spriteeeeee\assetBund\assetBund.chandler" />
+	  <None Remove="Spriteeeeee\assetBund\chandler.meta" />
+	  <None Remove="Spriteeeeee\ellegy\abilitie\bullet.png" />
+	  <None Remove="Spriteeeeee\ellegy\abilitie\execution.png" />
+	  <None Remove="Spriteeeeee\ellegy\abilitie\words.png" />
+	  <None Remove="Spriteeeeee\ellegy\BackEsther1.png" />
+	  <None Remove="Spriteeeeee\ellegy\EstherLock.png" />
+	  <None Remove="Spriteeeeee\ellegy\EstherMenu.png" />
+	  <None Remove="Spriteeeeee\ellegy\EstherOver.png" />
+	  <None Remove="Spriteeeeee\ellegy\FrontEsther1.png" />
+	  <None Remove="Spriteeeeee\ellegy\passi\eternity.png" />
+	  <None Remove="Spriteeeeee\funlocks\AdrenalineRush.png" />
+	  <None Remove="Spriteeeeee\funlocks\BetaBlockers.png" />
+	  <None Remove="Spriteeeeee\funlocks\DeathCup.png" />
+	  <None Remove="Spriteeeeee\funlocks\DevilPurse.png" />
+	  <None Remove="Spriteeeeee\funlocks\Guillotine.png" />
+	  <None Remove="Spriteeeeee\funlocks\OurHarmony.png" />
+	  <None Remove="Spriteeeeee\funlocks\RabidDog.png" />
+	  <None Remove="Spriteeeeee\funlocks\RabidDog\Acid.png" />
+	  <None Remove="Spriteeeeee\funlocks\RabidDog\Bite.png" />
+	  <None Remove="Spriteeeeee\funlocks\RabidDog\DogBack.png" />
+	  <None Remove="Spriteeeeee\funlocks\RabidDog\DogFront.png" />
+	  <None Remove="Spriteeeeee\funlocks\RabidDog\DogMenu.png" />
+	  <None Remove="Spriteeeeee\funlocks\RabidDog\DogOver.png" />
+	  <None Remove="Spriteeeeee\funlocks\RabidDog\Rabid.png" />
+	  <None Remove="Spriteeeeee\funlocks\RestrainingOrder.png" />
+	  <None Remove="Spriteeeeee\funlocks\SpiderVinegar.png" />
+	  <None Remove="Spriteeeeee\funlocks\WeightedScales.png" />
+	  <None Remove="Spriteeeeee\GuttedIcon.png" />
+	  <None Remove="Spriteeeeee\lobotomy\abilitie\arson.png" />
+	  <None Remove="Spriteeeeee\lobotomy\abilitie\burn.png" />
+	  <None Remove="Spriteeeeee\lobotomy\abilitie\flame.png" />
+	  <None Remove="Spriteeeeee\lobotomy\BackMoon.png" />
+	  <None Remove="Spriteeeeee\lobotomy\FireRoom\FireOne0.png" />
+	  <None Remove="Spriteeeeee\lobotomy\FireRoom\FireOne1.png" />
+	  <None Remove="Spriteeeeee\lobotomy\FireRoom\FireOne2.png" />
+	  <None Remove="Spriteeeeee\lobotomy\FireRoom\FireOne3.png" />
+	  <None Remove="Spriteeeeee\lobotomy\FireRoom\FireOne4.png" />
+	  <None Remove="Spriteeeeee\lobotomy\FireRoom\FireOne5.png" />
+	  <None Remove="Spriteeeeee\lobotomy\FireRoom\FireOne6.png" />
+	  <None Remove="Spriteeeeee\lobotomy\FireRoom\FireOne7.png" />
+	  <None Remove="Spriteeeeee\lobotomy\FireRoom\FireThree0.png" />
+	  <None Remove="Spriteeeeee\lobotomy\FireRoom\FireThree1.png" />
+	  <None Remove="Spriteeeeee\lobotomy\FireRoom\FireThree2.png" />
+	  <None Remove="Spriteeeeee\lobotomy\FireRoom\FireThree3.png" />
+	  <None Remove="Spriteeeeee\lobotomy\Moon1.png" />
+	  <None Remove="Spriteeeeee\lobotomy\Moon2.png" />
+	  <None Remove="Spriteeeeee\lobotomy\MoonLock.png" />
+	  <None Remove="Spriteeeeee\lobotomy\MoonMenu.png" />
+	  <None Remove="Spriteeeeee\lobotomy\MoonOver.png" />
+	  <None Remove="Spriteeeeee\lobotomy\passi\cold.png" />
+	  <None Remove="Spriteeeeee\lobotomy\passi\maniac.png" />
+	  <None Remove="Spriteeeeee\lobotomy\passi\mood.png" />
+	  <None Remove="Spriteeeeee\lobotomy\RedMoon1.png" />
+	  <None Remove="Spriteeeeee\modIcon.png" />
+	  <None Remove="Spriteeeeee\MutedIcon.png" />
+	  <None Remove="Spriteeeeee\PaleStatus.png" />
+	  <None Remove="Spriteeeeee\patiently\Ambush.png" />
+	  <None Remove="Spriteeeeee\patiently\BolaBack.png" />
+	  <None Remove="Spriteeeeee\patiently\BolaFront.png" />
+	  <None Remove="Spriteeeeee\patiently\BolaLock.png" />
+	  <None Remove="Spriteeeeee\patiently\BolaMenu.png" />
+	  <None Remove="Spriteeeeee\patiently\BolaOver.png" />
+	  <None Remove="Spriteeeeee\patiently\Diversion.png" />
+	  <None Remove="Spriteeeeee\patiently\Dodge.png" />
+	  <None Remove="Spriteeeeee\patiently\Snares.png" />
+	  <None Remove="Spriteeeeee\patiently\Tripwires.png" />
+	  <None Remove="Spriteeeeee\SlapIcon.png" />
+	  <None Remove="Spriteeeeee\stereosity\abilitie\colors.png" />
+	  <None Remove="Spriteeeeee\stereosity\abilitie\light.png" />
+	  <None Remove="Spriteeeeee\stereosity\abilitie\nausea.png" />
+	  <None Remove="Spriteeeeee\stereosity\abilitie\whispers.png" />
+	  <None Remove="Spriteeeeee\stereosity\BackBartholomew1.png" />
+	  <None Remove="Spriteeeeee\stereosity\BackBartholomew2.png" />
+	  <None Remove="Spriteeeeee\stereosity\BackBartholomew3.png" />
+	  <None Remove="Spriteeeeee\stereosity\BackBartholomew4.png" />
+	  <None Remove="Spriteeeeee\stereosity\BartholomewLock.png" />
+	  <None Remove="Spriteeeeee\stereosity\BartholomewMenu.png" />
+	  <None Remove="Spriteeeeee\stereosity\BartholomewOver.png" />
+	  <None Remove="Spriteeeeee\stereosity\FrontBartholomew1.png" />
+	  <None Remove="Spriteeeeee\stereosity\FrontBartholomew2.png" />
+	  <None Remove="Spriteeeeee\stereosity\FrontBartholomew3.png" />
+	  <None Remove="Spriteeeeee\stereosity\FrontBartholomew4.png" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <EmbeddedResource Include="Spriteeeeee\achievos\DivineAllergy.png" />
+	  <EmbeddedResource Include="Spriteeeeee\achievos\DivineEllegy.png" />
+	  <EmbeddedResource Include="Spriteeeeee\achievos\DivineLobotomy.png" />
+	  <EmbeddedResource Include="Spriteeeeee\achievos\DivinePatiently.png" />
+	  <EmbeddedResource Include="Spriteeeeee\achievos\DivineStereosity.png" />
+	  <EmbeddedResource Include="Spriteeeeee\achievos\FoolAllergy.png" />
+	  <EmbeddedResource Include="Spriteeeeee\achievos\FoolEllegy.png" />
+	  <EmbeddedResource Include="Spriteeeeee\achievos\FoolLobotomy.png" />
+	  <EmbeddedResource Include="Spriteeeeee\achievos\FoolPatiently.png" />
+	  <EmbeddedResource Include="Spriteeeeee\achievos\FoolStereosity.png" />
+	  <EmbeddedResource Include="Spriteeeeee\achievos\WitnessAllergy.png" />
+	  <EmbeddedResource Include="Spriteeeeee\achievos\WitnessEllegy.png" />
+	  <EmbeddedResource Include="Spriteeeeee\achievos\WitnessLobotomy.png" />
+	  <EmbeddedResource Include="Spriteeeeee\achievos\WitnessPatiently.png" />
+	  <EmbeddedResource Include="Spriteeeeee\achievos\WitnessStereosity.png" />
+	  <EmbeddedResource Include="Spriteeeeee\allergy\abilitie\gaze.png" />
+	  <EmbeddedResource Include="Spriteeeeee\allergy\abilitie\hatred.png" />
+	  <EmbeddedResource Include="Spriteeeeee\allergy\abilitie\imagination.png" />
+	  <EmbeddedResource Include="Spriteeeeee\allergy\abilitie\pill.png" />
+	  <EmbeddedResource Include="Spriteeeeee\allergy\BackSaline1.png" />
+	  <EmbeddedResource Include="Spriteeeeee\allergy\BackSaline2.png" />
+	  <EmbeddedResource Include="Spriteeeeee\allergy\enemie\38.png" />
+	  <EmbeddedResource Include="Spriteeeeee\allergy\enemie\eye.png" />
+	  <EmbeddedResource Include="Spriteeeeee\allergy\enemie\fire.png" />
+	  <EmbeddedResource Include="Spriteeeeee\allergy\enemie\icons\shadowIconB.png" />
+	  <EmbeddedResource Include="Spriteeeeee\allergy\enemie\icons\ShadowOver.png" />
+	  <EmbeddedResource Include="Spriteeeeee\allergy\enemie\nowa.png" />
+	  <EmbeddedResource Include="Spriteeeeee\allergy\enemie\smile.png" />
+	  <EmbeddedResource Include="Spriteeeeee\allergy\enemie\squid.png" />
+	  <EmbeddedResource Include="Spriteeeeee\allergy\enemie\sword.png" />
+	  <EmbeddedResource Include="Spriteeeeee\allergy\enemie\tooth.png" />
+	  <EmbeddedResource Include="Spriteeeeee\allergy\FrontSaline1.png" />
+	  <EmbeddedResource Include="Spriteeeeee\allergy\FrontSaline2.png" />
+	  <EmbeddedResource Include="Spriteeeeee\allergy\passi\psycho.png" />
+	  <EmbeddedResource Include="Spriteeeeee\allergy\SalineLock.png" />
+	  <EmbeddedResource Include="Spriteeeeee\allergy\SalineMenu.png" />
+	  <EmbeddedResource Include="Spriteeeeee\allergy\SalineOver.png" />
+	  <EmbeddedResource Include="Spriteeeeee\anesthetics2.png" />
+	  <EmbeddedResource Include="Spriteeeeee\assetBund\assetBund.chandler" />
+	  <EmbeddedResource Include="Spriteeeeee\assetBund\chandler.meta" />
+	  <EmbeddedResource Include="Spriteeeeee\ellegy\abilitie\bullet.png" />
+	  <EmbeddedResource Include="Spriteeeeee\ellegy\abilitie\execution.png" />
+	  <EmbeddedResource Include="Spriteeeeee\ellegy\abilitie\words.png" />
+	  <EmbeddedResource Include="Spriteeeeee\ellegy\BackEsther1.png" />
+	  <EmbeddedResource Include="Spriteeeeee\ellegy\EstherLock.png" />
+	  <EmbeddedResource Include="Spriteeeeee\ellegy\EstherMenu.png" />
+	  <EmbeddedResource Include="Spriteeeeee\ellegy\EstherOver.png" />
+	  <EmbeddedResource Include="Spriteeeeee\ellegy\FrontEsther1.png" />
+	  <EmbeddedResource Include="Spriteeeeee\ellegy\passi\eternity.png" />
+	  <EmbeddedResource Include="Spriteeeeee\funlocks\AdrenalineRush.png" />
+	  <EmbeddedResource Include="Spriteeeeee\funlocks\BetaBlockers.png" />
+	  <EmbeddedResource Include="Spriteeeeee\funlocks\DeathCup.png" />
+	  <EmbeddedResource Include="Spriteeeeee\funlocks\DevilPurse.png" />
+	  <EmbeddedResource Include="Spriteeeeee\funlocks\Guillotine.png" />
+	  <EmbeddedResource Include="Spriteeeeee\funlocks\OurHarmony.png" />
+	  <EmbeddedResource Include="Spriteeeeee\funlocks\RabidDog.png" />
+	  <EmbeddedResource Include="Spriteeeeee\funlocks\RabidDog\Acid.png" />
+	  <EmbeddedResource Include="Spriteeeeee\funlocks\RabidDog\Bite.png" />
+	  <EmbeddedResource Include="Spriteeeeee\funlocks\RabidDog\DogBack.png" />
+	  <EmbeddedResource Include="Spriteeeeee\funlocks\RabidDog\DogFront.png" />
+	  <EmbeddedResource Include="Spriteeeeee\funlocks\RabidDog\DogMenu.png" />
+	  <EmbeddedResource Include="Spriteeeeee\funlocks\RabidDog\DogOver.png" />
+	  <EmbeddedResource Include="Spriteeeeee\funlocks\RabidDog\Rabid.png" />
+	  <EmbeddedResource Include="Spriteeeeee\funlocks\RestrainingOrder.png" />
+	  <EmbeddedResource Include="Spriteeeeee\funlocks\SpiderVinegar.png" />
+	  <EmbeddedResource Include="Spriteeeeee\funlocks\WeightedScales.png" />
+	  <EmbeddedResource Include="Spriteeeeee\GuttedIcon.png" />
+	  <EmbeddedResource Include="Spriteeeeee\lobotomy\abilitie\arson.png" />
+	  <EmbeddedResource Include="Spriteeeeee\lobotomy\abilitie\burn.png" />
+	  <EmbeddedResource Include="Spriteeeeee\lobotomy\abilitie\flame.png" />
+	  <EmbeddedResource Include="Spriteeeeee\lobotomy\BackMoon.png" />
+	  <EmbeddedResource Include="Spriteeeeee\lobotomy\FireRoom\FireOne0.png" />
+	  <EmbeddedResource Include="Spriteeeeee\lobotomy\FireRoom\FireOne1.png" />
+	  <EmbeddedResource Include="Spriteeeeee\lobotomy\FireRoom\FireOne2.png" />
+	  <EmbeddedResource Include="Spriteeeeee\lobotomy\FireRoom\FireOne3.png" />
+	  <EmbeddedResource Include="Spriteeeeee\lobotomy\FireRoom\FireOne4.png" />
+	  <EmbeddedResource Include="Spriteeeeee\lobotomy\FireRoom\FireOne5.png" />
+	  <EmbeddedResource Include="Spriteeeeee\lobotomy\FireRoom\FireOne6.png" />
+	  <EmbeddedResource Include="Spriteeeeee\lobotomy\FireRoom\FireOne7.png" />
+	  <EmbeddedResource Include="Spriteeeeee\lobotomy\FireRoom\FireThree0.png" />
+	  <EmbeddedResource Include="Spriteeeeee\lobotomy\FireRoom\FireThree1.png" />
+	  <EmbeddedResource Include="Spriteeeeee\lobotomy\FireRoom\FireThree2.png" />
+	  <EmbeddedResource Include="Spriteeeeee\lobotomy\FireRoom\FireThree3.png" />
+	  <EmbeddedResource Include="Spriteeeeee\lobotomy\Moon1.png" />
+	  <EmbeddedResource Include="Spriteeeeee\lobotomy\Moon2.png" />
+	  <EmbeddedResource Include="Spriteeeeee\lobotomy\MoonLock.png" />
+	  <EmbeddedResource Include="Spriteeeeee\lobotomy\MoonMenu.png" />
+	  <EmbeddedResource Include="Spriteeeeee\lobotomy\MoonOver.png" />
+	  <EmbeddedResource Include="Spriteeeeee\lobotomy\passi\cold.png" />
+	  <EmbeddedResource Include="Spriteeeeee\lobotomy\passi\maniac.png" />
+	  <EmbeddedResource Include="Spriteeeeee\lobotomy\passi\mood.png" />
+	  <EmbeddedResource Include="Spriteeeeee\lobotomy\RedMoon1.png" />
+	  <EmbeddedResource Include="Spriteeeeee\modIcon.png" />
+	  <EmbeddedResource Include="Spriteeeeee\MutedIcon.png" />
+	  <EmbeddedResource Include="Spriteeeeee\PaleStatus.png" />
+	  <EmbeddedResource Include="Spriteeeeee\patiently\Ambush.png" />
+	  <EmbeddedResource Include="Spriteeeeee\patiently\BolaBack.png" />
+	  <EmbeddedResource Include="Spriteeeeee\patiently\BolaFront.png" />
+	  <EmbeddedResource Include="Spriteeeeee\patiently\BolaLock.png" />
+	  <EmbeddedResource Include="Spriteeeeee\patiently\BolaMenu.png" />
+	  <EmbeddedResource Include="Spriteeeeee\patiently\BolaOver.png" />
+	  <EmbeddedResource Include="Spriteeeeee\patiently\Diversion.png" />
+	  <EmbeddedResource Include="Spriteeeeee\patiently\Dodge.png" />
+	  <EmbeddedResource Include="Spriteeeeee\patiently\Snares.png" />
+	  <EmbeddedResource Include="Spriteeeeee\patiently\Tripwires.png" />
+	  <EmbeddedResource Include="Spriteeeeee\SlapIcon.png" />
+	  <EmbeddedResource Include="Spriteeeeee\stereosity\abilitie\colors.png" />
+	  <EmbeddedResource Include="Spriteeeeee\stereosity\abilitie\light.png" />
+	  <EmbeddedResource Include="Spriteeeeee\stereosity\abilitie\nausea.png" />
+	  <EmbeddedResource Include="Spriteeeeee\stereosity\abilitie\whispers.png" />
+	  <EmbeddedResource Include="Spriteeeeee\stereosity\BackBartholomew1.png" />
+	  <EmbeddedResource Include="Spriteeeeee\stereosity\BackBartholomew2.png" />
+	  <EmbeddedResource Include="Spriteeeeee\stereosity\BackBartholomew3.png" />
+	  <EmbeddedResource Include="Spriteeeeee\stereosity\BackBartholomew4.png" />
+	  <EmbeddedResource Include="Spriteeeeee\stereosity\BartholomewLock.png" />
+	  <EmbeddedResource Include="Spriteeeeee\stereosity\BartholomewMenu.png" />
+	  <EmbeddedResource Include="Spriteeeeee\stereosity\BartholomewOver.png" />
+	  <EmbeddedResource Include="Spriteeeeee\stereosity\FrontBartholomew1.png" />
+	  <EmbeddedResource Include="Spriteeeeee\stereosity\FrontBartholomew2.png" />
+	  <EmbeddedResource Include="Spriteeeeee\stereosity\FrontBartholomew3.png" />
+	  <EmbeddedResource Include="Spriteeeeee\stereosity\FrontBartholomew4.png" />
+	</ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="0Harmony">
+      <HintPath>..\..\the folder for references VS\BO Modding Generic Dependencies\0Harmony.dll</HintPath>
+    </Reference>
+    <Reference Include="Album">
+      <HintPath>..\..\the folder for references VS\BO Modding Generic Dependencies\Album.dll</HintPath>
+    </Reference>
+    <Reference Include="Assembly-CSharp">
+      <HintPath>..\..\the folder for references VS\BO Modding Generic Dependencies\Assembly-CSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="BepInEx">
+      <HintPath>..\..\the folder for references VS\BO Modding Generic Dependencies\BepInEx.dll</HintPath>
+    </Reference>
+    <Reference Include="BrutalAPI">
+      <HintPath>..\..\the folder for references VS\BO Modding Generic Dependencies\BrutalAPI.dll</HintPath>
+    </Reference>
+    <Reference Include="DOTween">
+      <HintPath>..\..\the folder for references VS\BO Modding Generic Dependencies\DOTween.dll</HintPath>
+    </Reference>
+    <Reference Include="FMODUnity">
+      <HintPath>..\..\the folder for references VS\BO Modding Generic Dependencies\FMODUnity.dll</HintPath>
+    </Reference>
+    <Reference Include="FMODUnityResonance">
+      <HintPath>..\..\the folder for references VS\BO Modding Generic Dependencies\FMODUnityResonance.dll</HintPath>
+    </Reference>
+    <Reference Include="Marosi.SerializableCollections">
+      <HintPath>..\..\the folder for references VS\BO Modding Generic Dependencies\Marosi.SerializableCollections.dll</HintPath>
+    </Reference>
+    <Reference Include="Marosi.Utility">
+      <HintPath>..\..\the folder for references VS\BO Modding Generic Dependencies\Marosi.Utility.dll</HintPath>
+    </Reference>
+    <Reference Include="MonoMod.RuntimeDetour">
+      <HintPath>..\..\the folder for references VS\BO Modding Generic Dependencies\MonoMod.RuntimeDetour.dll</HintPath>
+    </Reference>
+    <Reference Include="MonoMod.Utils">
+      <HintPath>..\..\the folder for references VS\BO Modding Generic Dependencies\MonoMod.Utils.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.TextMeshPro">
+      <HintPath>..\..\the folder for references VS\BO Modding Generic Dependencies\Unity.TextMeshPro.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine">
+      <HintPath>..\..\the folder for references VS\BO Modding Generic Dependencies\UnityEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.AnimationModule">
+      <HintPath>..\..\the folder for references VS\BO Modding Generic Dependencies\UnityEngine.AnimationModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.AssetBundleModule">
+      <HintPath>..\..\the folder for references VS\BO Modding Generic Dependencies\UnityEngine.AssetBundleModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.AudioModule">
+      <HintPath>..\..\the folder for references VS\BO Modding Generic Dependencies\UnityEngine.AudioModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath>..\..\the folder for references VS\BO Modding Generic Dependencies\UnityEngine.CoreModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ImageConversionModule">
+      <HintPath>..\..\the folder for references VS\BO Modding Generic Dependencies\UnityEngine.ImageConversionModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ParticleSystemModule">
+      <HintPath>..\..\the folder for references VS\BO Modding Generic Dependencies\UnityEngine.ParticleSystemModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UI">
+      <HintPath>..\..\the folder for references VS\BO Modding Generic Dependencies\UnityEngine.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UIModule">
+      <HintPath>..\..\the folder for references VS\BO Modding Generic Dependencies\UnityEngine.UIModule.dll</HintPath>
+    </Reference>
+    <Reference Include="YarnSpinner">
+      <HintPath>..\..\the folder for references VS\BO Modding Generic Dependencies\YarnSpinner.dll</HintPath>
+    </Reference>
+    <Reference Include="YarnSpinner.Compiler">
+      <HintPath>..\..\the folder for references VS\BO Modding Generic Dependencies\YarnSpinner.Compiler.dll</HintPath>
+    </Reference>
+    <Reference Include="YarnSpinner.Unity">
+      <HintPath>..\..\the folder for references VS\BO Modding Generic Dependencies\YarnSpinner.Unity.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>
