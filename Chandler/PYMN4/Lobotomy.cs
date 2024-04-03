@@ -18,9 +18,9 @@ namespace PYMN4
     {
       IDetour idetour1 = (IDetour) new Hook((MethodBase) typeof (TooltipTextHandlerSO).GetMethod("ProcessStoredValue", ~BindingFlags.Default), typeof (Lobotomy).GetMethod("moodStoredValue", ~BindingFlags.Default));
       IDetour idetour2 = (IDetour) new Hook((MethodBase) typeof (TooltipTextHandlerSO).GetMethod("ProcessStoredValue", ~BindingFlags.Default), typeof (Lobotomy).GetMethod("moodDefenseStoredValue", ~BindingFlags.Default));
-      CasterStoredValueChangeEffect instance1 = ScriptableObject.CreateInstance<CasterStoredValueChangeEffect>();
-      instance1._increase = true;
-      instance1._valueName = (UnitStoredValueNames) 327746;
+      CasterStoredValueChangeEffect moodDown = ScriptableObject.CreateInstance<CasterStoredValueChangeEffect>();
+      moodDown._increase = true;
+      moodDown._valueName = (UnitStoredValueNames) 327746;
       CasterStoredValueChangeEffect instance2 = ScriptableObject.CreateInstance<CasterStoredValueChangeEffect>();
       instance2._increase = true;
       instance2._valueName = (UnitStoredValueNames) 327745;
@@ -44,7 +44,7 @@ namespace PYMN4
       };
       instance3.effects = ExtensionMethods.ToEffectInfoArray(new Effect[2]
       {
-        new Effect((EffectSO) instance1, 1, new IntentType?(), Slots.Self),
+        new Effect((EffectSO) moodDown, 1, new IntentType?(), Slots.Self),
         new Effect((EffectSO) ScriptableObject.CreateInstance<MoodSignalEffect>(), 1, new IntentType?(), Slots.Self)
       });
       instance3._secondTriggerOn = new TriggerCalls[1]
@@ -53,7 +53,7 @@ namespace PYMN4
       };
       instance3._secondEffects = ExtensionMethods.ToEffectInfoArray(new Effect[2]
       {
-        new Effect((EffectSO) instance1, 1, new IntentType?(), Slots.Self),
+        new Effect((EffectSO) moodDown, 1, new IntentType?(), Slots.Self),
         new Effect((EffectSO) ScriptableObject.CreateInstance<MoodSignalEffect>(), 1, new IntentType?(), Slots.Self)
       });
       instance3._secondPerformConditions = new EffectorConditionSO[1]
@@ -191,8 +191,8 @@ namespace PYMN4
       ability4.description = "Inflict 2 Fire on the Opposing enemy tile and 1 Fire to self. Prevent Mood from decreasing for the rest of this turn. \nIf this party member was already in Fire, deal 1 indirect damage to self and refresh this party member as well.";
       ability4.effects[0]._entryVariable = 1;
       ability4.effects[1]._entryVariable = 2;
-      PreviousEffectCondition instance8 = ScriptableObject.CreateInstance<PreviousEffectCondition>();
-      instance8.wasSuccessful = true;
+      PreviousEffectCondition didThat = ScriptableObject.CreateInstance<PreviousEffectCondition>();
+      didThat.wasSuccessful = true;
       Ability ability5 = new Ability();
       ability5.name = "Burn Injuries";
       ability5.description = "Deal 12 direct fire damage to the Opposing enemy and inflict 1 Fire on self. Decrease Mood by 2.";
@@ -206,8 +206,8 @@ namespace PYMN4
       ability5.effects = new Effect[4];
       ability5.effects[0] = new Effect((EffectSO) ScriptableObject.CreateInstance<FireDamageEffect>(), 12, new IntentType?((IntentType) 3), Slots.Front);
       ability5.effects[1] = new Effect((EffectSO) ScriptableObject.CreateInstance<ApplyFireSlotEffect>(), 1, new IntentType?((IntentType) 172), Slots.Self);
-      ability5.effects[2] = new Effect((EffectSO) instance1, 2, new IntentType?((IntentType) 100), Slots.Self, (EffectConditionSO) ScriptableObject.CreateInstance<MoodDefendedCondition>());
-      ability5.effects[3] = new Effect((EffectSO) ScriptableObject.CreateInstance<MoodSignalEffect>(), 1, new IntentType?(), Slots.Self, (EffectConditionSO) instance8);
+      ability5.effects[2] = new Effect((EffectSO) moodDown, 2, new IntentType?((IntentType) 100), Slots.Self, (EffectConditionSO) ScriptableObject.CreateInstance<MoodDefendedCondition>());
+      ability5.effects[3] = new Effect((EffectSO) ScriptableObject.CreateInstance<MoodSignalEffect>(), 1, new IntentType?(), Slots.Self, (EffectConditionSO) didThat);
       ability5.visuals = LoadedAssetsHandler.GetCharacterAbility("Torch_1_A").visuals;
       ability5.animationTarget = Slots.Front;
       Ability ability6 = ability5.Duplicate();
@@ -241,10 +241,11 @@ namespace PYMN4
         Pigments.Red
       };
       ability9.sprite = ResourceLoader.LoadSprite("arson");
-      ability9.effects = new Effect[3];
+      ability9.effects = new Effect[4];
       ability9.effects[0] = new Effect((EffectSO) ScriptableObject.CreateInstance<CopyFireMoonEffect>(), 1, new IntentType?((IntentType) 172), Slots.Front);
       ability9.effects[1] = new Effect((EffectSO) ScriptableObject.CreateInstance<FireDamageEffect>(), 7, new IntentType?((IntentType) 2), (BaseCombatTargettingSO) instance9);
-      ability9.effects[2] = new Effect((EffectSO) instance1, 2, new IntentType?((IntentType) 100), Slots.Self, (EffectConditionSO) ScriptableObject.CreateInstance<MoodDefendedCondition>());
+      ability9.effects[2] = new Effect((EffectSO) moodDown, 2, new IntentType?((IntentType) 100), Slots.Self, (EffectConditionSO) ScriptableObject.CreateInstance<MoodDefendedCondition>());
+            ability9.effects[3] = new Effect(ScriptableObject.CreateInstance<MoodSignalEffect>(), 1, new IntentType?(), Slots.Self, (EffectConditionSO)didThat);
       ability9.visuals = LoadedAssetsHandler.GetCharacterAbility("Sear_1_A").visuals;
       ability9.animationTarget = (BaseCombatTargettingSO) MultiTargetting.Create((BaseCombatTargettingSO) instance9, Slots.Front);
       Ability ability10 = ability9.Duplicate();
