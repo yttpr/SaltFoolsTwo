@@ -39,20 +39,26 @@ namespace PYMN4
         {
           int num1 = areTargetSlots ? target.SlotID - target.Unit.SlotID : -1;
           int num2 = entryVariable;
-                    if (target.Unit.ContainsStatusEffect((StatusEffectType)9, 0))
-                    {
-                        num2 *= 3;
-                        target.Unit.TryRemoveStatusEffect(StatusEffectType.OilSlicked);
-                    }
+                    
                     DamageInfo damageInfo;
           if (this._indirect)
           {
-            damageInfo = target.Unit.Damage(num2, (IUnit) null, (DeathType) 53, num1, false, false, true, (DamageType) 6);
+                        if (target.Unit.ContainsStatusEffect((StatusEffectType)9, 0))
+                        {
+                            num2 *= 3;
+                            target.Unit.TryRemoveStatusEffect(StatusEffectType.OilSlicked);
+                        }
+                        damageInfo = target.Unit.Damage(num2, (IUnit) null, (DeathType) 53, num1, false, false, true, (DamageType) 6);
           }
           else
           {
             int num3 = caster.WillApplyDamage(num2, target.Unit);
-            damageInfo = target.Unit.Damage(num3, caster, (DeathType) 53, num1, true, true, this._ignoreShield, (DamageType) 6);
+                        if (target.Unit.ContainsStatusEffect((StatusEffectType)9, 0))
+                        {
+                            num3 *= 3;
+                            target.Unit.TryRemoveStatusEffect(StatusEffectType.OilSlicked);
+                        }
+                        damageInfo = target.Unit.Damage(num3, caster, (DeathType) 53, num1, true, true, this._ignoreShield, (DamageType) 6);
           }
           flag |= damageInfo.beenKilled;
           exitAmount += damageInfo.damageAmount;
