@@ -39,9 +39,12 @@ namespace PYMN4
         {
           int num1 = areTargetSlots ? target.SlotID - target.Unit.SlotID : -1;
           int num2 = entryVariable;
-          if (target.Unit.ContainsStatusEffect((StatusEffectType) 9, 0))
-            num2 *= 3;
-          DamageInfo damageInfo;
+                    if (target.Unit.ContainsStatusEffect((StatusEffectType)9, 0))
+                    {
+                        num2 *= 3;
+                        target.Unit.TryRemoveStatusEffect(StatusEffectType.OilSlicked);
+                    }
+                    DamageInfo damageInfo;
           if (this._indirect)
           {
             damageInfo = target.Unit.Damage(num2, (IUnit) null, (DeathType) 53, num1, false, false, true, (DamageType) 6);
