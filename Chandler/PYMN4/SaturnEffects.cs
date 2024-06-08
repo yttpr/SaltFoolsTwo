@@ -13,11 +13,25 @@ namespace PYMN4
         public static void UseMutedAbilityChara(Action<CharacterCombat, int, FilledManaCost[]> orig, CharacterCombat self, int abilityID, FilledManaCost[] filledCost)
         {
             AbilitySO ability = self.CombatAbilities[abilityID].ability;
-            bool flag = self.ContainsStatusEffect((StatusEffectType)846750, 0) && ability._abilityName != "Slap";
-            if (flag)
+            if (self.ContainsStatusEffect((StatusEffectType)846750) && ability._abilityName != "Slap")
             {
-                StringReference stringReference = new StringReference(ability.GetAbilityLocData().text);
-                CombatManager.Instance.PostNotification(30.ToString(), self, stringReference);
+                try
+                {
+                    Vector3 loc = default(Vector3);
+                    CombatStats stats = CombatManager.Instance._stats;
+                    try
+                    {
+                        if (!self.IsUnitCharacter)
+                        {
+                            loc = stats.combatUI._characterZone._characters[self.FieldID].FieldEntity.Position;
+                        }
+                    }
+                    catch { }
+                    CombatManager.Instance.AddUIAction(new PlaySoundUIAction("event:/Hawthorne/Boowomp", loc));
+                }
+                catch { }
+                StringReference args = new StringReference(ability.GetAbilityLocData().text);
+                CombatManager.Instance.PostNotification(TriggerCalls.OnAbilityWillBeUsed.ToString(), self, args);
                 CombatManager.Instance.AddRootAction(new StartAbilityCostAction(self.ID, filledCost));
                 Debug.Log("is muted, used not slap");
                 CombatManager.Instance.AddRootAction(new AddLuckyManaAction());
@@ -25,15 +39,12 @@ namespace PYMN4
                 self.CanUseAbilities = false;
                 self.HasManuallyUsedAbilityThisTurn = true;
                 self.UpdatePerformAbilityCounter();
-                self.SetVolatileUpdateUIAction(false);
+                self.SetVolatileUpdateUIAction();
+                return;
             }
-            else
-            {
-                orig(self, abilityID, filledCost);
-            }
+            orig(self, abilityID, filledCost);
         }
 
-        // Token: 0x060000FB RID: 251 RVA: 0x00007768 File Offset: 0x00005968
         public static void UseMutedAbilityEn(Action<EnemyCombat, int> orig, EnemyCombat self, int abilitySlot)
         {
             if (abilitySlot >= self.Abilities.Count)
@@ -43,6 +54,21 @@ namespace PYMN4
             AbilitySO ability = self.Abilities[abilitySlot].ability;
             if (self.ContainsStatusEffect((StatusEffectType)846750) && ability._abilityName != "Slap")
             {
+                try
+                {
+                    Vector3 loc = default(Vector3);
+                    CombatStats stats = CombatManager.Instance._stats;
+                    try
+                    {
+                        if (!self.IsUnitCharacter)
+                        {
+                            loc = stats.combatUI._enemyZone._enemies[self.FieldID].FieldEntity.Position;
+                        }
+                    }
+                    catch { }
+                    CombatManager.Instance.AddUIAction(new PlaySoundUIAction("event:/Hawthorne/Boowomp", loc));
+                }
+                catch { }
                 Debug.Log("is muted, used not slap");
                 StringReference args = new StringReference("Slap");
                 CombatManager.Instance.PostNotification(TriggerCalls.OnAbilityWillBeUsed.ToString(), self, args);
