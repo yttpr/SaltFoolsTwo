@@ -10,7 +10,7 @@ using UnityEngine;
 
 namespace PYMN4
 {
-  [BepInPlugin("Salt.Chandler", "Salt Fools 2?? (\"TM\")", "1.3.9")]
+  [BepInPlugin("Salt.Chandler", "Salt Fools 2?? (\"TM\")", "1.3.9.1")]
     [BepInDependency("Bones404.BrutalAPI", (BepInDependency.DependencyFlags)1)]
     public class Edge : BaseUnityPlugin
   {

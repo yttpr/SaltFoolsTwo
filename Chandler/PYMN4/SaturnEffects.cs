@@ -36,27 +36,22 @@ namespace PYMN4
         // Token: 0x060000FB RID: 251 RVA: 0x00007768 File Offset: 0x00005968
         public static void UseMutedAbilityEn(Action<EnemyCombat, int> orig, EnemyCombat self, int abilitySlot)
         {
-            bool flag = abilitySlot >= self.Abilities.Count;
-            if (flag)
+            if (abilitySlot >= self.Abilities.Count)
             {
                 abilitySlot = self.Abilities.Count - 1;
             }
             AbilitySO ability = self.Abilities[abilitySlot].ability;
-            bool flag2 = self.ContainsStatusEffect((StatusEffectType)846750, 0) && ability._abilityName != "Slap";
-            if (flag2)
+            if (self.ContainsStatusEffect((StatusEffectType)846750) && ability._abilityName != "Slap")
             {
                 Debug.Log("is muted, used not slap");
-                Effect effect = new Effect(ScriptableObject.CreateInstance<SlapEffect>(), 1, null, Slots.Self, null);
-                CombatManager.Instance.AddSubAction(new EffectAction(ExtensionMethods.ToEffectInfoArray(new Effect[]
-                {
-                    effect
-                }), self, 0));
+                StringReference args = new StringReference("Slap");
+                CombatManager.Instance.PostNotification(TriggerCalls.OnAbilityWillBeUsed.ToString(), self, args);
+                Effect slap = new Effect(ScriptableObject.CreateInstance<SlapEffect>(), 1, null, Slots.Self);
+                CombatManager.Instance.AddSubAction(new EffectAction(ExtensionMethods.ToEffectInfoArray(new Effect[1] { slap }), (self as IUnit)));
                 self.EndTurn();
+                return;
             }
-            else
-            {
-                orig(self, abilitySlot);
-            }
+            orig(self, abilitySlot);
         }
 
         // Token: 0x060000FC RID: 252 RVA: 0x00007834 File Offset: 0x00005A34

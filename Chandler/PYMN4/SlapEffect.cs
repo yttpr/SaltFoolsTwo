@@ -9,35 +9,35 @@ using UnityEngine;
 
 namespace PYMN4
 {
-  public class SlapEffect : EffectSO
-  {
-    [SerializeField]
-    public bool _justOneTarget;
-    [SerializeField]
-    public bool _randomBetweenPrevious;
-
-    public override bool PerformEffect(
-      CombatStats stats,
-      IUnit caster,
-      TargetSlotInfo[] targets,
-      bool areTargetSlots,
-      int entryVariable,
-      out int exitAmount)
+    public class SlapEffect : EffectSO
     {
-      exitAmount = 0;
-      if (entryVariable <= 0)
-        return false;
-      CombatManager.Instance.AddUIAction((CombatAction) new ShowAttackInformationUIAction(caster.ID, caster.IsUnitCharacter, "Slap"));
-      AnimationVisualsEffect instance = ScriptableObject.CreateInstance<AnimationVisualsEffect>();
-      instance._visuals = LoadedAssetsHandler.GetCharacterAbility("Slap_A").visuals;
-      instance._animationTarget = Slots.Front;
-      CombatManager.Instance.AddSubAction((CombatAction) new EffectAction(ExtensionMethods.ToEffectInfoArray(new Effect[2]
-      {
-        new Effect((EffectSO) instance, 1, new IntentType?(), Slots.Front),
-        new Effect((EffectSO) ScriptableObject.CreateInstance<DamageEffect>(), 1, new IntentType?(), Slots.Front)
-      }), caster, 0));
-      ++exitAmount;
-      return exitAmount > 0;
+        [SerializeField]
+        public bool _justOneTarget;
+        [SerializeField]
+        public bool _randomBetweenPrevious;
+
+        public override bool PerformEffect(
+          CombatStats stats,
+          IUnit caster,
+          TargetSlotInfo[] targets,
+          bool areTargetSlots,
+          int entryVariable,
+          out int exitAmount)
+        {
+            exitAmount = 0;
+            if (entryVariable <= 0)
+                return false;
+
+            CombatManager.Instance.AddUIAction(new ShowAttackInformationUIAction(caster.ID, caster.IsUnitCharacter, "Slap"));
+            AnimationVisualsEffect slapAnim = ScriptableObject.CreateInstance<AnimationVisualsEffect>();
+            slapAnim._visuals = LoadedAssetsHandler.GetCharacterAbility("Slap_A").visuals;
+            slapAnim._animationTarget = Slots.Front;
+            Effect anim = new Effect(slapAnim, 1, null, Slots.Front);
+            Effect slap = new Effect(ScriptableObject.CreateInstance<DamageEffect>(), 1, null, Slots.Front);
+            CombatManager.Instance.AddSubAction(new EffectAction(ExtensionMethods.ToEffectInfoArray(new Effect[2] { anim, slap }), caster));
+            CombatManager.Instance.AddRootAction(new EndAbilityAction(caster.ID, caster.IsUnitCharacter));
+            exitAmount++;
+            return exitAmount > 0;
+        }
     }
-  }
 }
